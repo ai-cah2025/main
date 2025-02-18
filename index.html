@@ -38,24 +38,6 @@
       color: #333;
     }
 
-    /* --- SPECIAL ISSUE HEADER --- */
-    .special-issue-header {
-      background-color: #e0f7fa;
-      padding: 15px 20px;
-      text-align: center;
-    }
-    .special-issue-header h2 {
-      margin-bottom: 10px;
-    }
-    .special-issue-header a {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-
     /* --- HERO BANNER STYLES --- */
     .hero-banner {
       background: url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
@@ -93,16 +75,21 @@
     }
 
     /* --- CFP SPECIFIC STYLES --- */
+    /* A container to override the default center alignment and justify the text */
     .cfp-container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 800px;  /* keeps text at a comfortable width */
+      margin: 0 auto;    /* center the container itself */
       text-align: justify;
     }
+
+    /* Keep subheadings (h3) centered or left-aligned, as you prefer */
     .cfp-container h3 {
       text-align: center;
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
+
+    /* Make sure lists are left-aligned for clarity */
     .cfp-container ul {
       text-align: left;
       margin: 1em auto;
@@ -112,10 +99,11 @@
     }
 
     .tpc-container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 800px;  /* keeps text at a comfortable width */
+      margin: 0 auto;    /* center the container itself */
       text-align: justify;
     }
+
     .tpc-container ul {
       text-align: left;
       margin: 1em auto;
@@ -124,6 +112,7 @@
       padding-left: 20px;
     }
 
+    
     /* --- FOOTER STYLES --- */
     footer {
       background: #003366;
@@ -137,16 +126,6 @@
   </style>
 </head>
 <body>
-
-  <!-- SPECIAL ISSUE HEADER -->
-  <header class="special-issue-header">
-    <h2>Special Issue: Applications of AI in the Analysis of Cultural and Artistic Heritage</h2>
-    <p>Organized within the <strong>35th IEEE International Workshop on Machine Learning for Signal Processing (MLSP 2025)</strong></p>
-    <!-- If available, you can include the MLSP 2025 logo below the text:
-         <img src="path-to-mlsp-logo.png" alt="MLSP 2025 Logo" style="max-width:150px; display:block; margin: 10px auto;">
-    -->
-    <a href="https://2025.ieeemlsp.org/en/" target="_blank">Visit MLSP 2025</a>
-  </header>
 
   <!-- HERO BANNER -->
   <header class="hero-banner">
@@ -197,120 +176,200 @@
       <h3>Important Dates:</h3>
       <ul>
         <li><strong>Deadline for paper submissions:</strong> May 10, 2025</li>
-        <li><strong>Notification of paper acceptance:</strong> June 24, 2025 (Tentative)</li>
-        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025 (Tentative)</li>
+        <li><strong>Notification of paper acceptance:</strong> June 24, 2025 (Tentative) </li>
+        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025 (Tentative) </li>
       </ul>
 
       <h3>Submission Guidelines:</h3>
     </div>
   </section>
 
-  <!-- ORGANIZATION -->
+  
   <section id="organization">
-    <h2>Organizers</h2>
-    <div class="organizers-container">
-      <!-- Organizer Card 1 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
-            <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
-          </a>
-        </div>
-        <div class="organizer-name">Sinem Aslan</div>
-        <div class="organizer-affiliation"> University of Milan <br> Italy </div>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    /* Container that holds all the organizer "cards" */
+    .organizers-container {
+      display: flex;
+      flex-wrap: wrap; /* allows cards to wrap on smaller screens */
+      gap: 20px;       /* space between cards */
+      justify-content: center; /* center the cards horizontally */
+    }
+    
+    /* Each organizer's card */
+    .organizer-card {
+      border: 1px solid #ccc;       /* thin border around the card */
+      border-radius: 8px;           /* slightly rounded corners */
+      width: 200px;                 /* fixed width for each card (adjust as needed) */
+      padding: 20px;                /* space inside the card */
+      text-align: center;           /* center the text within the card */
+      background-color: #fff;       /* card background color */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
+    }
+    
+    /* The photo area (can be a circle or square) */
+    .organizer-photo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;          /* center the photo, add some space below */
+      border-radius: 50%;           /* make it a circle */
+      overflow: hidden;             /* hide any overflow from the image */
+      background-color: #f2f2f2;    /* fallback background color */
+    }
+    
+    .organizer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;            /* keep the image proportionate */
+    }
+    
+    .organizer-name {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    
+    .organizer-affiliation {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.3em;
+    }
+    
+    .organizer-logo {
+      max-width: 100px;     /* limit logo width */
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Organizers</h2>
+  <div class="organizers-container">
+    
+    <!-- Card 1 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <!-- Replace with actual photo URL or remove if not needed -->
+        <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
+        <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
+      </a>
       </div>
-      
-      <!-- Organizer Card 2 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://web.itu.edu.tr/ekenel/" target="_blank">
-            <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
-          </a>
-        </div>
-        <div class="organizer-name">Hazım Kemal Ekenel</div>
-        <div class="organizer-affiliation">Istanbul Technical University <br> Turkey </div>
-      </div>
-      
-      <!-- Organizer Card 3 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://www.gennarovessio.com" target="_blank">
-            <img src="https://lh4.googleusercontent.com/6LijBezOaBnj-DYL-JXMIzX72GNAlXsENX6O8O1otNzHhHOu1X40sXp8V-JLWRrMEk--5Y7YVhVSjkDeDqi3XY8=w1280" alt="Gennaro Vessio">
-          </a>
-        </div>
-        <div class="organizer-name">Gennaro Vessio</div>
-        <div class="organizer-affiliation">University of Bari Aldo Moro <br> Italy </div>
-      </div>
-      
-      <!-- Organizer Card 4 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">
-            <img src="https://ris.bradford.ac.uk/attachments/12021" alt="Hassan Ugail">
-          </a>
-        </div>
-        <div class="organizer-name">Hassan Ugail</div>
-        <div class="organizer-affiliation">University of Bradford <br> UK </div>
-      </div>
-      
-      <!-- Organizer Card 5 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
-          </a>
-        </div>
-        <div class="organizer-name">Anthony Bourached</div>
-        <div class="organizer-affiliation">University College London <br> UK </div>
-      </div>
-      
-      <!-- Organizer Card 6 -->
-      <div class="organizer-card">
-        <div class="organizer-photo">
-          <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">
-            <img src="https://www.cisbec.unipi.it/images/foto_afferenti/gabriele-gattiglia.jpg" alt="Gabriele Gattiglia">
-          </a>
-        </div>
-        <div class="organizer-name">Gabriele Gattiglia</div>
-        <div class="organizer-affiliation">University of Pisa <br> Italy </div>
-      </div>
+      <div class="organizer-name">Sinem Aslan</div>
+      <div class="organizer-affiliation"> University of Milan </br> Italy </div>
     </div>
-  </section>
+    
+    <!-- Card 2 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <a href="https://web.itu.edu.tr/ekenel/" target="_blank">
 
-  <!-- TPC SECTION -->
+        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
+      </a>
+      </div>
+      <div class="organizer-name">Hazım Kemal Ekenel</div>
+      <div class="organizer-affiliation">Istanbul Technical University </br> Turkey </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <a href="https://www.gennarovessio.com" target="_blank">        
+        <img src="https://lh4.googleusercontent.com/6LijBezOaBnj-DYL-JXMIzX72GNAlXsENX6O8O1otNzHhHOu1X40sXp8V-JLWRrMEk--5Y7YVhVSjkDeDqi3XY8=w1280" alt="Gennaro Vessio">
+       </a>
+      </div>
+      <div class="organizer-name">Gennaro Vessio</div>
+      <div class="organizer-affiliation">University of Bari Aldo Moro </br> Italy </div>
+    </div>
+    
+    <!-- Card 4 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">        
+
+        <img src="https://ris.bradford.ac.uk/attachments/12021" alt="Hassan Ugail">
+      </a>
+      </div>
+      <div class="organizer-name">Hassan Ugail</div>
+      <div class="organizer-affiliation">University of Bradford </br> UK </div>
+    </div>
+    
+    <!-- Card 5 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">        
+
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
+      </a>
+      </div>
+      <div class="organizer-name">Anthony Bourached</div>
+      <div class="organizer-affiliation">University College London </br> UK </div>
+    </div>
+    
+    <!-- Card 6 -->
+    <div class="organizer-card">
+      <div class="organizer-photo">
+        <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">        
+
+        <img src="https://www.cisbec.unipi.it/images/foto_afferenti/gabriele-gattiglia.jpg" alt="Gabriele Gattiglia">
+      </a>
+      </div>
+      <div class="organizer-name">Gabriele Gattiglia</div>
+      <div class="organizer-affiliation">University of Pisa </br> Italy </div>
+    </div>
+
+    <!-- Add more cards as needed -->
+
   <section id="tpc">
-    <h2>Technical Program Committee</h2>
-    <div class="tpc-container">
-      <ul>
-        <li>TPC committee coming soon</li>
-        <li>..</li>
-        <li>..</li>
-        <li>..</li>
-        <li>..</li>
-        <li>..</li>
-      </ul>
-    </div>
+  <h2>Technical Program Committee</h2>
+  <div class="tpc-container">
+    <ul>
+      <li> tpc committee coming soon </li>
+      <li> .. </li>
+      <li>..</li>
+      <li>..</li>
+      <li>..</li>
+      <li>..</li>
+    </ul>
+  </div>
+</section>
+    
+
+
+  
   </section>
 
-  <!-- INVITED SPEAKER -->
   <section id="invited">
     <h2>Invited Speaker</h2>
     <p>Keynote speaker details coming soon.</p>
   </section>
 
-  <!-- PROGRAM -->
   <section id="program">
     <h2>Program</h2>
     <p>Schedule and session details.</p>
   </section>
 
-  <!-- REGISTRATION -->
   <section id="registration">
     <h2>Registration</h2>
     <p>Information on how to register.</p>
   </section>
 
-  <!-- VENUE -->
   <section id="venue">
     <h2>Venue</h2>
     <p>Location and travel information.</p>
@@ -322,3 +381,5 @@
   </footer>
 </body>
 </html>
+
+
