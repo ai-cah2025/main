@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Applications of AI in the Analysis of Cultural and Artistic Heritage </title>
+  <title>Applications of AI in the Analysis of Cultural and Artistic Heritage</title>
 
   <!-- 1. Load Google Fonts (Playfair Display for headings, Open Sans for paragraphs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,8 @@
     body {
       margin: 0;
       padding: 0;
-      text-align: center;
+      text-align: center; /* Centers everything by default */
+      background-color: #f9f9f9;
     }
 
     /* Headings: Playfair Display (serif) */
@@ -26,10 +27,11 @@
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       margin: 0;
+      color: #333;
     }
 
     /* Paragraphs and other text: Open Sans (sans-serif) */
-    p, span, li, a, div {
+    p, span, li, a, div, ul {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
       line-height: 1.6;
@@ -38,17 +40,7 @@
 
     /* --- HERO BANNER STYLES --- */
     .hero-banner {
-      /* Use a gradient or replace with an image, e.g.:
-         background: url('banner.jpg') center/cover no-repeat; */
       background: url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
-      /* background: linear-gradient(to right, #E8D9CD, #E8D9CD);
-      https://d35fbhjemrkr2a.cloudfront.net/Images/Shop/73/Product/11493/400/5fbe5c2e36ec4d0ba678261a8ad34184.jpg
-      https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg 
-      https://www.istanbulsanatevi.com/sanatcilar/soyadi-c2/calli-ibrahim/ibrahim-calli-bogaz-6246/ 
-     https://www.wikiart.org/en/bedri-rahmi-eyuboglu/sali-bazaar-1938 
-      Devrim erbil- istanbul 
-      https://muze.gen.tr/img/maidens-tower-istanbul.jpg
-       */
       padding: 120px 20px;
     }
     .hero-banner h1 {
@@ -82,6 +74,30 @@
       margin-bottom: 10px;
     }
 
+    /* --- CFP SPECIFIC STYLES --- */
+    /* A container to override the default center alignment and justify the text */
+    .cfp-container {
+      max-width: 800px;  /* keeps text at a comfortable width */
+      margin: 0 auto;    /* center the container itself */
+      text-align: justify;
+    }
+
+    /* Keep subheadings (h3) centered or left-aligned, as you prefer */
+    .cfp-container h3 {
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Make sure lists are left-aligned for clarity */
+    .cfp-container ul {
+      text-align: left;
+      margin: 1em auto;
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 20px;
+    }
+
     /* --- FOOTER STYLES --- */
     footer {
       background: #003366;
@@ -90,6 +106,7 @@
       position: fixed;
       width: 100%;
       bottom: 0;
+      left: 0;
     }
   </style>
 </head>
@@ -119,175 +136,101 @@
     <p>Join us for a special session on AI in Cultural and Artistic Heritage at MLSP 2025.</p>
   </section>
 
+  <!-- CALL FOR PAPERS -->
   <section id="cfp">
     <h2>Call for Papers</h2>
-    <p>
-      Artificial Intelligence (AI) is transforming the field of cultural and artistic heritage, offering new possibilities for the analysis, 
-      classification, and restoration of historical artifacts. This session will showcase the latest AI-driven methodologies and their 
-      groundbreaking applications in the analysis, interpretation, and preservation of cultural and artistic heritage. We invite researchers 
-      to contribute their work on AI techniques applied to textual, visual, and multimodal data within the context of cultural heritage.
-  </p>
- <p> Topics include, but are not limited to:
-<ul> Image Analysis & Artifact Classification</ul>
-<ul>AI-driven Restoration and Enhancement of Cultural Artifacts</ul>
-<ul>Machine Learning for Document Understanding </ul>
-<ul>Generative Models for Historical Artifacts</ul>
-<ul>Multimodal AI Approaches for Cultural Heritage Connoisseurship</ul>
-<ul>AI in Art History and Art Analysis</ul>
- </p>
- <p>
-   Important Dates (Tentative):
-Deadline for paper submissions: May 10, 2025 
-Notification of paper acceptance: June 24, 2025
-Deadline for camera-ready paper submissions: July 15, 2025
-   
-</p>
-    
+    <div class="cfp-container">
+      <p>
+        Artificial Intelligence (AI) is transforming the field of cultural and artistic heritage, offering new possibilities 
+        for the analysis, classification, and restoration of historical artifacts. This session will showcase the latest 
+        AI-driven methodologies and their groundbreaking applications in the analysis, interpretation, and preservation of 
+        cultural and artistic heritage. We invite researchers to contribute their work on AI techniques applied to textual, 
+        visual, and multimodal data within the context of cultural heritage.
+      </p>
+
+      <h3>Topics include, but are not limited to:</h3>
+      <ul>
+        <li>Image Analysis &amp; Artifact Classification</li>
+        <li>AI-driven Restoration and Enhancement of Cultural Artifacts</li>
+        <li>Machine Learning for Document Understanding</li>
+        <li>Generative Models for Historical Artifacts</li>
+        <li>Multimodal AI Approaches for Cultural Heritage Connoisseurship</li>
+        <li>AI in Art History and Art Analysis</li>
+      </ul>
+
+      <h3>Important Dates (Tentative):</h3>
+      <ul>
+        <li><strong>Deadline for paper submissions:</strong> May 10, 2025</li>
+        <li><strong>Notification of paper acceptance:</strong> June 24, 2025</li>
+        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025</li>
+      </ul>
+    </div>
   </section>
 
+  <!-- ORGANIZATION -->
   <section id="organization">
-  <style>
-    /* Basic reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    
-    /* Container that holds all the organizer "cards" */
-    .organizers-container {
-      display: flex;
-      flex-wrap: wrap; /* allows cards to wrap on smaller screens */
-      gap: 20px;       /* space between cards */
-      justify-content: center; /* center the cards horizontally */
-    }
-    
-    /* Each organizer's card */
-    .organizer-card {
-      border: 1px solid #ccc;       /* thin border around the card */
-      border-radius: 8px;           /* slightly rounded corners */
-      width: 200px;                 /* fixed width for each card (adjust as needed) */
-      padding: 20px;                /* space inside the card */
-      text-align: center;           /* center the text within the card */
-      background-color: #fff;       /* card background color */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
-    }
-    
-    /* The photo area (can be a circle or square) */
-    .organizer-photo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 10px;          /* center the photo, add some space below */
-      border-radius: 50%;           /* make it a circle */
-      overflow: hidden;             /* hide any overflow from the image */
-      background-color: #f2f2f2;    /* fallback background color */
-    }
-    
-    .organizer-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;            /* keep the image proportionate */
-    }
-    
-    .organizer-name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 8px;
-    }
-    
-    .organizer-affiliation {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 10px;
-      line-height: 1.3em;
-    }
-    
-    .organizer-logo {
-      max-width: 100px;     /* limit logo width */
-      height: auto;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Organizers</h2>
-  <div class="organizers-container">
-    
-    <!-- Card 1 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <!-- Replace with actual photo URL or remove if not needed -->
-        <img src="https://via.placeholder.com/80" alt="Sinem Aslan">
+    <h2>Organizers</h2>
+    <div class="organizers-container" style="max-width: 1200px; margin: 0 auto;">
+      <!-- Card 1 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Sinem Aslan">
+        </div>
+        <div class="organizer-name">Sinem Aslan</div>
+        <div class="organizer-affiliation">University of Milan</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Sinem Aslan</div>
-      <div class="organizer-affiliation"> University of Milan </div>
-      <!-- Optional logo -->
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="Uppsala University Logo">
-    </div>
-    
-    <!-- Card 2 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <img src="https://via.placeholder.com/80" alt="Hazım Kemal Ekenel">
+      
+      <!-- Card 2 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Hazım Kemal Ekenel">
+        </div>
+        <div class="organizer-name">Hazım Kemal Ekenel</div>
+        <div class="organizer-affiliation">Istanbul Technical University</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Hazım Kemal Ekenel</div>
-      <div class="organizer-affiliation">Istanbul Technical University</div>
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University of Amsterdam Logo">
-    </div>
-    
-    <!-- Card 3 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <img src="https://via.placeholder.com/80" alt="Gennaro Vessio">
+      
+      <!-- Card 3 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Gennaro Vessio">
+        </div>
+        <div class="organizer-name">Gennaro Vessio</div>
+        <div class="organizer-affiliation">University of Bari Aldo Moro</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Gennaro Vessio</div>
-      <div class="organizer-affiliation">University of Bari Aldo Moro</div>
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="Tokyo Tech Logo">
-    </div>
-    
-    <!-- Card 4 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <img src="https://via.placeholder.com/80" alt="Hassan Ugail">
+      
+      <!-- Card 4 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Hassan Ugail">
+        </div>
+        <div class="organizer-name">Hassan Ugail</div>
+        <div class="organizer-affiliation">University of Bradford</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Hassan Ugail</div>
-      <div class="organizer-affiliation">University of Bradford</div>
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="Marburg Logo">
-    </div>
-    
-    <!-- Card 5 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <img src="https://via.placeholder.com/80" alt="Anthony Bourached">
+      
+      <!-- Card 5 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Anthony Bourached">
+        </div>
+        <div class="organizer-name">Anthony Bourached</div>
+        <div class="organizer-affiliation">University College London</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Anthony Bourached</div>
-      <div class="organizer-affiliation">University College London</div>
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="Durham Logo">
-    </div>
-    
-    <!-- Card 6 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <img src="https://via.placeholder.com/80" alt="Gattiglia Gabriele">
+      
+      <!-- Card 6 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <img src="https://via.placeholder.com/80" alt="Gattiglia Gabriele">
+        </div>
+        <div class="organizer-name">Gattiglia Gabriele</div>
+        <div class="organizer-affiliation">University of Pisa</div>
+        <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="University Logo">
       </div>
-      <div class="organizer-name">Gattiglia Gabriele </div>
-      <div class="organizer-affiliation">University of Pisa</div>
-      <img class="organizer-logo" src="https://via.placeholder.com/100x50" alt="Logo">
     </div>
-
-    <!-- Add more cards as needed -->
-    
-  </div>
   </section>
 
   <section id="invited">
