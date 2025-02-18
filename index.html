@@ -300,7 +300,7 @@
     .organizers-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px; /* Adjust spacing between organizers */
+      gap: 30px; /* Adjust spacing between organizers */
       justify-content: center;
       align-items: center;
     }
@@ -318,13 +318,20 @@
       font-size: 16px;
       color: #333;
     }
+    .organizer-affiliation {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.3em;
+    }
+
   </style>
 
   <div class="organizers-container">
     <div class="organizer">
       <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
       <p><strong>Sinem Aslan</strong></p>
-      <p>University of Milan, Italy</p>
+       <div class="organizer-affiliation"> University of Milan </br><strong> Italy</strong> </div>
     </div>
     <div class="organizer">
       <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
