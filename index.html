@@ -5,132 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Applications of AI in the Analysis of Cultural and Artistic Heritage</title>
 
-  <!-- 1. Load Google Fonts (Playfair Display for headings, Open Sans for paragraphs) -->
+  <!-- Load Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     html {
-  scroll-behavior: smooth;
-  }
-    /* --- GLOBAL STYLES --- */
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
-      text-align: center; /* Centers everything by default */
+      text-align: center;
       background-color: #f9f9f9;
       font-size: 18px;
       line-height: 1.8;
-      /* Extra bottom padding so fixed footer doesn't cover content */
       padding-bottom: 60px;
     }
-
-    
-
-    /* Headings: Playfair Display (serif) */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       margin: 0;
       color: #333;
     }
-    h1 { font-size: 48px; margin-bottom: 20px; }
-    h2 { font-size: 36px; margin-top: 30px; margin-bottom: 20px; }
-    h3 { font-size: 28px; margin-top: 20px; margin-bottom: 15px; }
-
-    
-  /* Paragraphs and other text: Open Sans (sans-serif) */
     p, span, li, a, div, ul {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
       color: #333;
     }
-
-    
-
-      /* --- SPECIAL ISSUE HEADER --- */
     .special-issue-header {
       background-color: #D1C7BD;
-        background-size: cover;
-        width: 100vw;
-         padding: 15px 22px;
+      width: 100vw;
+      padding: 15px 22px;
       text-align: center;
     }
-    .special-issue-header h2 {
-      margin-bottom: 10px;
-    }
     .special-issue-header a {
-      background-color: #D1C7BD;
       color: #333;
-      padding: 0px 0px;
-      text-decoration: none;
-      border-radius: 0px;
       font-weight: 600;
+      text-decoration: none;
     }
-
-    .special-issue-header a:hover,
-    .special-issue-header a:focus {
+    .special-issue-header a:hover {
       color: #003366;
-      outline: none;
     }
-    
-
-
-    /* --- HERO BANNER STYLES   --- */
-
-    
     .hero-banner {
       background: url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
-        background-size: cover;
-        width: 100vw;
-    position: relative;
-       padding: 170px 20px;
+      width: 100vw;
+      padding: 170px 20px;
+      position: relative;
     }
-       /* Overlay for better text readability */
-    .hero-banner::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
     .hero-banner h1 {
       font-size: 40px;
       color: #333;
-      margin-top: -100px; /* Adjust this value as needed */
-
     }
-    
     .hero-banner p {
-      margin: 8px 0;
-      font-size: 20px; 
-      color: #4B4B4B; /* #555; */
+      font-size: 20px;
+      color: #4B4B4B;
       text-align: right;
-      right: 100px; /* Adjust this value to position the paragraph from the right edge */
     }
-
-    .hero-banner im {
-      margin: 8px 0;
-      font-size: 12px; 
-      color: #4B4B4B; /* #555; */
-      text-align: right;
-      margin-top: -160px; /* Adjust this value to position the paragraph from the right edge */
-    }
-
-
-    
-    /* --- NAVIGATION STYLES --- */
-  nav {
+    nav {
       background: #D1C7BD;
-      background-size: cover;
-        width: 100vw;
+      width: 100vw;
       padding: 10px;
     }
     nav a {
@@ -140,63 +75,23 @@
       font-size: 18px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    nav a:hover,
-    nav a:focus {
+    nav a:hover {
       background-color: #A89F91;
       color: #fff;
-      outline: none;
     }
-
-    
-    /* --- MAIN CONTENT SECTIONS --- */
     section {
       padding: 20px;
     }
-    section h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    /* --- CFP SPECIFIC STYLES --- */
-    /* A container to override the default center alignment and justify the text */
     .cfp-container {
-      max-width: 800px;  /* keeps text at a comfortable width */
-      margin: 0 auto;    /* center the container itself */
+      max-width: 800px;
+      margin: 0 auto;
       text-align: justify;
     }
-
-    /* Keep subheadings (h3) centered or left-aligned, as you prefer */
-    .cfp-container h3 {
-      text-align: center;
-      margin-top: 1em;
-      margin-bottom: 0.5em;
-    }
-
-    /* Make sure lists are left-aligned for clarity */
     .cfp-container ul {
       text-align: left;
-      margin: 1em auto;
       list-style-type: disc;
-      list-style-position: outside;
       padding-left: 20px;
     }
-
-    .tpc-container {
-      max-width: 800px;  /* keeps text at a comfortable width */
-      margin: 0 auto;    /* center the container itself */
-      text-align: justify;
-    }
-
-    .tpc-container ul {
-      text-align: left;
-      margin: 1em auto;
-      list-style-type: disc;
-      list-style-position: outside;
-      padding-left: 20px;
-    }
-
-    
-    /* --- FOOTER STYLES --- */
     footer {
       background: #003366;
       color: white;
@@ -209,26 +104,14 @@
   </style>
 </head>
 <body>
-
-   <!-- SPECIAL ISSUE HEADER -->
   <header class="special-issue-header">
-   <!-- <h2>Special Session: Applications of AI in the Analysis of Cultural and Artistic Heritage</h2> -->
-    <p>Organized within the <strong> <a href="https://2025.ieeemlsp.org/en/" target="_blank"> 35th IEEE International Workshop on Machine Learning for Signal Processing </a> </strong> </p>
-    <!-- If available, you can include the MLSP 2025 logo below the text:
-         <img src="path-to-mlsp-logo.png" alt="MLSP 2025 Logo" style="max-width:150px; display:block; margin: 10px auto;"> -->
-  
-    <!-- <a href="https://2025.ieeemlsp.org/en/" target="_blank">Visit MLSP 2025</a>  -->
+    <p>Organized within the <strong><a href="https://2025.ieeemlsp.org/en/" target="_blank">35th IEEE International Workshop on Machine Learning for Signal Processing</a></strong></p>
   </header>
-  
-  <!-- HERO BANNER -->
   <header class="hero-banner">
     <h1>Applications of AI in the Analysis of Cultural and Artistic Heritage</h1>
-    <p> <strong> Date, 2025</strong></p>
+    <p><strong>Date, 2025</strong></p>
     <p>Istanbul, Turkey</p>
-   <!-- <im>Fausto Zonaro, Torre de Leandro (1854-1929)</im> -->
   </header>
-
-  <!-- NAVIGATION -->
   <nav>
     <a href="#home">Home</a>
     <a href="#cfp">Call for Papers</a>
@@ -238,16 +121,10 @@
     <a href="#registration">Registration</a>
     <a href="#venue">Venue</a>
   </nav>
-
-  <!-- MAIN CONTENT -->
   <section id="home">
     <h2>Welcome</h2>
     <p>Join us for a special session on AI in Cultural and Artistic Heritage at MLSP 2025.</p>
   </section>
-
-    
-
-  <!-- CALL FOR PAPERS -->
   <section id="cfp">
     <h2>Call for Papers</h2>
     <div class="cfp-container">
@@ -255,248 +132,19 @@
         Artificial Intelligence (AI) is transforming the field of cultural and artistic heritage, offering new possibilities 
         for the analysis, classification, and restoration of historical artifacts. This session will showcase the latest 
         AI-driven methodologies and their groundbreaking applications in the analysis, interpretation, and preservation of 
-        cultural and artistic heritage. We invite researchers to contribute their work on AI techniques applied to textual, 
-        visual, and multimodal data within the context of cultural heritage.
+        cultural and artistic heritage.
       </p>
-      
-<section id="promoted">
- <div class="cfp-container">
-   <p> This special session is promoted by the <a href= "https://www.cvl.iis.u-tokyo.ac.jp/IAPR-TC19/" target = "_blank"> <strong>IAPR Technical Committee 19 </strong></a> (Computer Vision for Cultural Heritage Applications).
-</p>
-</section>
-      
       <h3>Topics include, but are not limited to:</h3>
       <ul>
-        <li>Image Analysis &amp; Artifact Classification</li>
+        <li>Image Analysis & Artifact Classification</li>
         <li>AI-driven Restoration and Enhancement of Cultural Artifacts</li>
         <li>Machine Learning for Document Understanding</li>
-        <li>Generative Models for Historical Artifacts</li>
-        <li>Multimodal AI Approaches for Cultural Heritage Connoisseurship</li>
-        <li>AI in Art History and Art Analysis</li>
+        <li>Computational Analysis of Historical Paintings</li>
       </ul>
-
-      <h3>Important Dates:</h3>
-      <ul>
-        <li><strong>Deadline for paper submissions:</strong> May 10, 2025</li>
-        <li><strong>Notification of paper acceptance:</strong> June 24, 2025 (Tentative) </li>
-        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025 (Tentative) </li>
-      </ul>
-
-      <h3>Submission Guidelines:</h3>
-      <p><strong>Authors</strong> are invited to submit <strong>6 pages full-length papers</strong>, including figures and references. 
-      All accepted and presented papers will be published in and indexed by <strong><a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank"> IEEE Xplore</strong> </a>. </p>
-      </br> 
-      <p>Please observe that MLSP uses a <strong>double-blind review process</strong>. Thus, it is important that 
-      all potentially identifying information (such as author names and affiliations) is removed
-      from the initial submission pdf file. For further information, please follow the guidelines provided on the <a href= "https://2025.ieeemlsp.org/en/PAPER-SUBMISSION-GUIDELINES.html" target="_blank"> <strong>main conference website </strong></a>.</p>
-</p>
-       </div>
-  </section>
-
-  
-  <section id="organization">
-  <style>
-    /* Basic reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    
-    /* Container that holds all the organizer "cards" */
-    .organizers-container {
-      display: flex;
-      flex-wrap: wrap; /* allows cards to wrap on smaller screens */
-      gap: 20px;       /* space between cards */
-      justify-content: center; /* center the cards horizontally */
-    }
-    
-    /* Each organizer's card */
-    .organizer-card {
-      border: 1px solid #ccc;       /* thin border around the card */
-      border-radius: 8px;           /* slightly rounded corners */
-      width: 200px;                 /* fixed width for each card (adjust as needed) */
-      padding: 20px;                /* space inside the card */
-      text-align: center;           /* center the text within the card */
-      background-color: #fff;       /* card background color */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
-    }
-    
-    /* The photo area (can be a circle or square) */
-    .organizer-photo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 10px;          /* center the photo, add some space below */
-      border-radius: 50%;           /* make it a circle */
-      overflow: hidden;             /* hide any overflow from the image */
-      background-color: #f2f2f2;    /* fallback background color */
-    }
-    
-    .organizer-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;            /* keep the image proportionate */
-    }
-    
-    .organizer-name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 8px;
-    }
-    
-    .organizer-affiliation {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 10px;
-      line-height: 1.3em;
-    }
-    
-    .organizer-logo {
-      max-width: 100px;     /* limit logo width */
-      height: auto;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Organizers</h2>
-  <div class="organizers-container">
-    
-    <!-- Card 1 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <!-- Replace with actual photo URL or remove if not needed -->
-        <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
-        <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
-      </a>
-      </div>
-      <div class="organizer-name">Sinem Aslan</div>
-      <div class="organizer-affiliation"> University of Milan </br><strong> Italy</strong> </div>
     </div>
-    
-    <!-- Card 2 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://web.itu.edu.tr/ekenel/" target="_blank">
-
-        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
-      </a>
-      </div>
-      <div class="organizer-name">Hazım Kemal Ekenel</div>
-      <div class="organizer-affiliation">Istanbul Technical University</br> <strong>Turkey </strong></div>
-    </div>
-    
-    <!-- Card 3 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.gennarovessio.com" target="_blank">        
-        <img src="https://lh4.googleusercontent.com/6LijBezOaBnj-DYL-JXMIzX72GNAlXsENX6O8O1otNzHhHOu1X40sXp8V-JLWRrMEk--5Y7YVhVSjkDeDqi3XY8=w1280" alt="Gennaro Vessio">
-       </a>
-      </div>
-      <div class="organizer-name">Gennaro Vessio</div>
-      <div class="organizer-affiliation">University of Bari Aldo Moro </br> <strong> Italy</strong> </div>
-    </div>
-    
-    <!-- Card 4 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">        
-
-        <img src="https://ris.bradford.ac.uk/attachments/12021" alt="Hassan Ugail">
-      </a>
-      </div>
-      <div class="organizer-name">Hassan Ugail</div>
-      <div class="organizer-affiliation">University of Bradford</br> <strong> UK</strong> </div>
-    </div>
-    
-    <!-- Card 5 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">        
-
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
-      </a>
-      </div>
-      <div class="organizer-name">Anthony Bourached</div>
-      <div class="organizer-affiliation">University College London</br> <strong>UK</strong> </div>
-    </div>
-    
-    <!-- Card 6 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">        
-
-        <img src="https://www.cisbec.unipi.it/images/foto_afferenti/gabriele-gattiglia.jpg" alt="Gabriele Gattiglia">
-      </a>
-      </div>
-      <div class="organizer-name">Gabriele Gattiglia</div>
-      <div class="organizer-affiliation">University of Pisa</br><strong> Italy </strong></div>
-    </div>
-
-    <!-- Add more cards as needed -->
-
-  <section id="tpc">
-  <h2>Technical Program Committee</h2>
-  <div class="tpc-container">
-    <ul>
-      <li> tpc coming soon </li>
-      <li> .. </li>
-      <li>..</li>
-      <li>..</li>
-      <li>..</li>
-      <li>..</li>
-    </ul>
-  </div>
-</section>
-    
-
-
-  
   </section>
-
-  <section id="invited">
-    <h2>Invited Speaker</h2>
-    <p>Keynote speaker details coming soon.</p>
-  </section>
-
-  <section id="program">
-    <h2>Program</h2>
-    <p>Schedule and session details.</p>
-  </section>
-
-  <section id="registration">
-    <h2>Registration</h2>
-    <div class="cfp-container">
-      <p> Each accepted paper must be covered by at least one registered author. </p>
-       <p>More information is available on the <a href= "https://2025.ieeemlsp.org/en/REGISTRATION.html" target="_blank"> main conference website </a>.</p>
-  </div>
-  </section>
-
-  <section id="venue">
-    <h2>Venue</h2>
-    <div class="cfp-container">
-    <p>Special session will be held at <a href= "https://icec.org/en/homepage/" target= "_blank"> Istanbul Lutfi Kirdar International Convention and Exhibition Centre </a>. More information is available on the <a href= "https://2025.ieeemlsp.org/en/GENERAL-INFO.html" target="_blank"> main conference website </a>.</p>
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.9941182450216!2d28.987165795321676!3d41.04725771226077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab70d2fc107f1%3A0x936151d76e1032ce!2sIstanbul%20Lutfi%20Kirdar%20International%20Convention%20%26%20Exhibition%20Center!5e0!3m2!1sen!2sit!4v1739893992716!5m2!1sen!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
- </div>
-  </section>
-
-
-  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Special Session on Applications of AI in the Analysis of Cultural and Artistic Heritage
+    <p>&copy; 2025 Applications of AI in Cultural and Artistic Heritage. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
-
-
