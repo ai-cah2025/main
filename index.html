@@ -15,14 +15,19 @@
 
   <style>
     html {
-  scroll-behavior: smooth;
-  }
+      scroll-behavior: smooth;
+    }
+
     /* --- GLOBAL STYLES --- */
     body {
       margin: 0;
       padding: 0;
-      text-align: center; /* Centers everything by default */
+      text-align: center;
       background-color: #f9f9f9;
+      font-size: 18px;
+      line-height: 1.8;
+      /* Extra bottom padding so fixed footer doesn't cover content */
+      padding-bottom: 60px;
     }
 
     /* Headings: Playfair Display (serif) */
@@ -32,52 +37,72 @@
       margin: 0;
       color: #333;
     }
+    h1 { font-size: 48px; margin-bottom: 20px; }
+    h2 { font-size: 36px; margin-top: 30px; margin-bottom: 20px; }
+    h3 { font-size: 28px; margin-top: 20px; margin-bottom: 15px; }
 
     /* Paragraphs and other text: Open Sans (sans-serif) */
     p, span, li, a, div, ul {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
-      line-height: 1.6;
       color: #333;
     }
 
-      /* --- SPECIAL ISSUE HEADER --- */
+    /* --- SPECIAL ISSUE HEADER --- */
     .special-issue-header {
       background-color: #D1C7BD;
       padding: 15px 22px;
       text-align: center;
     }
-    .special-issue-header h2 {
-      margin-bottom: 10px;
+    .special-issue-header p {
+      margin: 0;
     }
     .special-issue-header a {
       background-color: #D1C7BD;
       color: #333;
-      padding: 0px 0px;
       text-decoration: none;
-      border-radius: 0px;
       font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .special-issue-header a:hover,
+    .special-issue-header a:focus {
+      color: #003366;
+      outline: none;
     }
     
-    /* --- HERO BANNER STYLES   --- */
-
-    
+    /* --- HERO BANNER STYLES --- */
     .hero-banner {
+      position: relative;
       background: url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
       padding: 170px 20px;
+      color: #fff;
+    }
+    /* Overlay for better text readability */
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+    .hero-banner h1,
+    .hero-banner p {
+      position: relative;
+      z-index: 1;
     }
     .hero-banner h1 {
       font-size: 40px;
-      color: #333;
-      margin-top: -100px; /* Adjust this value as needed */
-
+      color: #fff;
+      margin-top: -100px; /* Adjust as needed */
     }
-    
     .hero-banner p {
       margin: 8px 0;
       font-size: 20px;
-      color: #4B4B4B; /* #555; */
-      right: 20px; /* Adjust this value to position the paragraph from the right edge */
+      /* Use a slightly darker tone for text against the overlay */
+      color: #4B4B4B;
     }
 
     /* --- NAVIGATION STYLES --- */
@@ -90,11 +115,18 @@
       text-decoration: none;
       margin: 10px;
       font-size: 18px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #A89F91;
+      color: #fff;
+      outline: none;
     }
 
     /* --- MAIN CONTENT SECTIONS --- */
     section {
-      padding: 20px;
+      padding: 40px 20px;
     }
     section h2 {
       margin-top: 0;
@@ -102,21 +134,16 @@
     }
 
     /* --- CFP SPECIFIC STYLES --- */
-    /* A container to override the default center alignment and justify the text */
     .cfp-container {
-      max-width: 800px;  /* keeps text at a comfortable width */
-      margin: 0 auto;    /* center the container itself */
+      max-width: 800px;
+      margin: 0 auto;
       text-align: justify;
     }
-
-    /* Keep subheadings (h3) centered or left-aligned, as you prefer */
     .cfp-container h3 {
       text-align: center;
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
-
-    /* Make sure lists are left-aligned for clarity */
     .cfp-container ul {
       text-align: left;
       margin: 1em auto;
@@ -126,11 +153,10 @@
     }
 
     .tpc-container {
-      max-width: 800px;  /* keeps text at a comfortable width */
-      margin: 0 auto;    /* center the container itself */
+      max-width: 800px;
+      margin: 0 auto;
       text-align: justify;
     }
-
     .tpc-container ul {
       text-align: left;
       margin: 1em auto;
@@ -139,7 +165,57 @@
       padding-left: 20px;
     }
 
-    
+    /* --- ORGANIZERS SECTION STYLES --- */
+    .organizers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .organizer-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 200px;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .organizer-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    .organizer-photo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #f2f2f2;
+    }
+    .organizer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .organizer-name {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    .organizer-affiliation {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.3em;
+    }
+    .organizer-logo {
+      max-width: 100px;
+      height: auto;
+      margin-top: 10px;
+    }
+
     /* --- FOOTER STYLES --- */
     footer {
       background: #003366;
@@ -150,18 +226,29 @@
       bottom: 0;
       left: 0;
     }
+
+    /* --- FOCUS STYLES --- */
+    a:focus {
+      outline: 3px solid #ff6347;
+    }
+
+    /* --- MEDIA QUERIES --- */
+    @media screen and (max-width: 768px) {
+      .organizers-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
   </style>
 </head>
 <body>
-
-   <!-- SPECIAL ISSUE HEADER -->
+  <!-- SPECIAL ISSUE HEADER -->
   <header class="special-issue-header">
-   <!-- <h2>Special Session: Applications of AI in the Analysis of Cultural and Artistic Heritage</h2> -->
-    <p>Organized within the <strong> <a href="https://2025.ieeemlsp.org/en/" target="_blank"> 35th IEEE International Workshop on Machine Learning for Signal Processing </a> </strong> </p>
-    <!-- If available, you can include the MLSP 2025 logo below the text:
-         <img src="path-to-mlsp-logo.png" alt="MLSP 2025 Logo" style="max-width:150px; display:block; margin: 10px auto;"> -->
-  
-    <!-- <a href="https://2025.ieeemlsp.org/en/" target="_blank">Visit MLSP 2025</a>  -->
+    <p>Organized within the <strong><a href="https://2025.ieeemlsp.org/en/" target="_blank">35th IEEE International Workshop on Machine Learning for Signal Processing</a></strong></p>
   </header>
   
   <!-- HERO BANNER -->
@@ -199,7 +286,6 @@
         cultural and artistic heritage. We invite researchers to contribute their work on AI techniques applied to textual, 
         visual, and multimodal data within the context of cultural heritage.
       </p>
-
       <h3>Topics include, but are not limited to:</h3>
       <ul>
         <li>Image Analysis &amp; Artifact Classification</li>
@@ -209,204 +295,117 @@
         <li>Multimodal AI Approaches for Cultural Heritage Connoisseurship</li>
         <li>AI in Art History and Art Analysis</li>
       </ul>
-
       <h3>Important Dates:</h3>
       <ul>
         <li><strong>Deadline for paper submissions:</strong> May 10, 2025</li>
-        <li><strong>Notification of paper acceptance:</strong> June 24, 2025 (Tentative) </li>
-        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025 (Tentative) </li>
+        <li><strong>Notification of paper acceptance:</strong> June 24, 2025 (Tentative)</li>
+        <li><strong>Deadline for camera-ready paper submissions:</strong> July 15, 2025 (Tentative)</li>
       </ul>
-
       <h3>Submission Guidelines:</h3>
     </div>
   </section>
 
-  
+  <!-- ORGANIZATION -->
   <section id="organization">
-  <style>
-    /* Basic reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    
-    /* Container that holds all the organizer "cards" */
-    .organizers-container {
-      display: flex;
-      flex-wrap: wrap; /* allows cards to wrap on smaller screens */
-      gap: 20px;       /* space between cards */
-      justify-content: center; /* center the cards horizontally */
-    }
-    
-    /* Each organizer's card */
-    .organizer-card {
-      border: 1px solid #ccc;       /* thin border around the card */
-      border-radius: 8px;           /* slightly rounded corners */
-      width: 200px;                 /* fixed width for each card (adjust as needed) */
-      padding: 20px;                /* space inside the card */
-      text-align: center;           /* center the text within the card */
-      background-color: #fff;       /* card background color */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
-    }
-    
-    /* The photo area (can be a circle or square) */
-    .organizer-photo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 10px;          /* center the photo, add some space below */
-      border-radius: 50%;           /* make it a circle */
-      overflow: hidden;             /* hide any overflow from the image */
-      background-color: #f2f2f2;    /* fallback background color */
-    }
-    
-    .organizer-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;            /* keep the image proportionate */
-    }
-    
-    .organizer-name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 8px;
-    }
-    
-    .organizer-affiliation {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 10px;
-      line-height: 1.3em;
-    }
-    
-    .organizer-logo {
-      max-width: 100px;     /* limit logo width */
-      height: auto;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Organizers</h2>
-  <div class="organizers-container">
-    
-    <!-- Card 1 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <!-- Replace with actual photo URL or remove if not needed -->
-        <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
-        <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
-      </a>
+    <h2>Organizers</h2>
+    <div class="organizers-container">
+      <!-- Card 1 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
+            <img src="https://centroclio.unimi.it/wp-content/uploads/sites/95/2024/10/Screenshot-2024-10-07-alle-20.50.43.png" alt="Sinem Aslan">
+          </a>
+        </div>
+        <div class="organizer-name">Sinem Aslan</div>
+        <div class="organizer-affiliation">University of Milan <br> Italy</div>
       </div>
-      <div class="organizer-name">Sinem Aslan</div>
-      <div class="organizer-affiliation"> University of Milan </br> Italy </div>
-    </div>
-    
-    <!-- Card 2 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://web.itu.edu.tr/ekenel/" target="_blank">
-
-        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
-      </a>
+      <!-- Card 2 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://web.itu.edu.tr/ekenel/" target="_blank">
+            <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
+          </a>
+        </div>
+        <div class="organizer-name">Hazım Kemal Ekenel</div>
+        <div class="organizer-affiliation">Istanbul Technical University <br> Turkey</div>
       </div>
-      <div class="organizer-name">Hazım Kemal Ekenel</div>
-      <div class="organizer-affiliation">Istanbul Technical University </br> Turkey </div>
-    </div>
-    
-    <!-- Card 3 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.gennarovessio.com" target="_blank">        
-        <img src="https://lh4.googleusercontent.com/6LijBezOaBnj-DYL-JXMIzX72GNAlXsENX6O8O1otNzHhHOu1X40sXp8V-JLWRrMEk--5Y7YVhVSjkDeDqi3XY8=w1280" alt="Gennaro Vessio">
-       </a>
+      <!-- Card 3 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://www.gennarovessio.com" target="_blank">
+            <img src="https://lh4.googleusercontent.com/6LijBezOaBnj-DYL-JXMIzX72GNAlXsENX6O8O1otNzHhHOu1X40sXp8V-JLWRrMEk--5Y7YVhVSjkDeDqi3XY8=w1280" alt="Gennaro Vessio">
+          </a>
+        </div>
+        <div class="organizer-name">Gennaro Vessio</div>
+        <div class="organizer-affiliation">University of Bari Aldo Moro <br> Italy</div>
       </div>
-      <div class="organizer-name">Gennaro Vessio</div>
-      <div class="organizer-affiliation">University of Bari Aldo Moro </br> Italy </div>
-    </div>
-    
-    <!-- Card 4 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">        
-
-        <img src="https://ris.bradford.ac.uk/attachments/12021" alt="Hassan Ugail">
-      </a>
+      <!-- Card 4 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">
+            <img src="https://ris.bradford.ac.uk/attachments/12021" alt="Hassan Ugail">
+          </a>
+        </div>
+        <div class="organizer-name">Hassan Ugail</div>
+        <div class="organizer-affiliation">University of Bradford <br> UK</div>
       </div>
-      <div class="organizer-name">Hassan Ugail</div>
-      <div class="organizer-affiliation">University of Bradford </br> UK </div>
-    </div>
-    
-    <!-- Card 5 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">        
-
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
-      </a>
+      <!-- Card 5 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
+          </a>
+        </div>
+        <div class="organizer-name">Anthony Bourached</div>
+        <div class="organizer-affiliation">University College London <br> UK</div>
       </div>
-      <div class="organizer-name">Anthony Bourached</div>
-      <div class="organizer-affiliation">University College London </br> UK </div>
-    </div>
-    
-    <!-- Card 6 -->
-    <div class="organizer-card">
-      <div class="organizer-photo">
-        <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">        
-
-        <img src="https://www.cisbec.unipi.it/images/foto_afferenti/gabriele-gattiglia.jpg" alt="Gabriele Gattiglia">
-      </a>
+      <!-- Card 6 -->
+      <div class="organizer-card">
+        <div class="organizer-photo">
+          <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">
+            <img src="https://www.cisbec.unipi.it/images/foto_afferenti/gabriele-gattiglia.jpg" alt="Gabriele Gattiglia">
+          </a>
+        </div>
+        <div class="organizer-name">Gabriele Gattiglia</div>
+        <div class="organizer-affiliation">University of Pisa <br> Italy</div>
       </div>
-      <div class="organizer-name">Gabriele Gattiglia</div>
-      <div class="organizer-affiliation">University of Pisa </br> Italy </div>
     </div>
-
-    <!-- Add more cards as needed -->
-
-  <section id="tpc">
-  <h2>Technical Program Committee</h2>
-  <div class="tpc-container">
-    <ul>
-      <li> tpc committee coming soon </li>
-      <li> .. </li>
-      <li>..</li>
-      <li>..</li>
-      <li>..</li>
-      <li>..</li>
-    </ul>
-  </div>
-</section>
-    
-
-
-  
   </section>
 
+  <!-- TECHNICAL PROGRAM COMMITTEE -->
+  <section id="tpc">
+    <h2>Technical Program Committee</h2>
+    <div class="tpc-container">
+      <ul>
+        <li>TPC committee coming soon</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INVITED SPEAKER -->
   <section id="invited">
     <h2>Invited Speaker</h2>
     <p>Keynote speaker details coming soon.</p>
   </section>
 
+  <!-- PROGRAM -->
   <section id="program">
     <h2>Program</h2>
     <p>Schedule and session details.</p>
   </section>
 
+  <!-- REGISTRATION -->
   <section id="registration">
     <h2>Registration</h2>
     <p>Information on how to register.</p>
   </section>
 
+  <!-- VENUE -->
   <section id="venue">
     <h2>Venue</h2>
     <p>Location and travel information.</p>
@@ -418,5 +417,3 @@
   </footer>
 </body>
 </html>
-
-
