@@ -92,7 +92,7 @@
     }
 
     /* --- NAVIGATION STYLES --- */
-    nav {
+   <!-- nav {
       background: #D1C7BD;
       padding: 10px;
     }
@@ -101,8 +101,27 @@
       text-decoration: none;
       margin: 10px;
       font-size: 18px;
+    } --!>
+
+  nav {
+      background: #D1C7BD;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #A89F91;
+      color: #fff;
+      outline: none;
     }
 
+    
     /* --- MAIN CONTENT SECTIONS --- */
     section {
       padding: 20px;
