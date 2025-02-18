@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Special Session - AI in Cultural and Artistic Heritage</title>
+
+  <!-- 1. Load Google Fonts (Playfair Display for headings, Open Sans for paragraphs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    /* --- GLOBAL STYLES --- */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       text-align: center;
     }
 
+    /* Headings: Playfair Display (serif) */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* Paragraphs and other text: Open Sans (sans-serif) */
+    p, span, li, a, div {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #333;
+    }
+
     /* --- HERO BANNER STYLES --- */
     .hero-banner {
-      /* Use a gradient or an image background */
-      background: linear-gradient(to right, #E8D9CD, #E8D9CD);
-      /* OR use an image, for example:
-         background: url('your-image.jpg') center/cover no-repeat;
-      */
+      /* Use a gradient or replace with an image, e.g.:
+         background: url('banner.jpg') center/cover no-repeat; */
+      background: linear-gradient(to right, #f0f0f0, #cccccc);
       padding: 80px 20px;
-      /* Space above/below the text for a more prominent look */
     }
     .hero-banner h1 {
-      margin: 0;
       font-size: 40px;
       color: #333;
     }
@@ -35,7 +55,7 @@
 
     /* --- NAVIGATION STYLES --- */
     nav {
-      background: #D1C7BD;
+      background: #0055A4;
       padding: 10px;
     }
     nav a {
@@ -48,6 +68,10 @@
     /* --- MAIN CONTENT SECTIONS --- */
     section {
       padding: 20px;
+    }
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
     }
 
     /* --- FOOTER STYLES --- */
@@ -86,32 +110,32 @@
     <h2>Welcome</h2>
     <p>Join us for a special session on AI in Cultural and Artistic Heritage at MLSP 2025.</p>
   </section>
-  
+
   <section id="cfp">
     <h2>Call for Papers</h2>
     <p>Submit your papers on AI applications in cultural and artistic heritage.</p>
   </section>
-  
+
   <section id="organization">
     <h2>Organization</h2>
     <p>Details on organizers and committees.</p>
   </section>
-  
+
   <section id="invited">
     <h2>Invited Speaker</h2>
     <p>Keynote speaker details coming soon.</p>
   </section>
-  
+
   <section id="program">
     <h2>Program</h2>
     <p>Schedule and session details.</p>
   </section>
-  
+
   <section id="registration">
     <h2>Registration</h2>
     <p>Information on how to register.</p>
   </section>
-  
+
   <section id="venue">
     <h2>Venue</h2>
     <p>Location and travel information.</p>
@@ -121,6 +145,5 @@
   <footer>
     &copy; 2025 Special Session on AI in Cultural and Artistic Heritage
   </footer>
-
 </body>
 </html>
