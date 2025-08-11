@@ -1,108 +1,251 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta property="og:title" content="Applications of AI in the Analysis of Cultural and Artistic Heritage" />
-  <meta property="og:description" content="Special session at IEEE MLSP 2025: Exploring AI methods in cultural and artistic heritage analysis." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ai-cah2025.github.io/main/" />
-  <meta property="og:image" content="https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg" />
+<meta property="og:description" content="Special session at IEEE MLSP 2025: Exploring AI methods in cultural and artistic heritage analysis." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ai-cah2025.github.io/main/" />  <!-- senin sayfa URL'in -->
+<meta property="og:image" content="https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Applications of AI in the Analysis of Cultural and Artistic Heritage</title>
 
+  <!-- 1. Load Google Fonts (Playfair Display for headings, Open Sans for paragraphs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    html { scroll-behavior: smooth; }
-
+    html {
+  scroll-behavior: smooth;
+  }
     /* --- GLOBAL STYLES --- */
-    body{
-      margin:0; padding:0; text-align:center; background:#f9f9f9;
-      font-size:18px; line-height:1.8; padding-bottom:60px;
-    }
-    h1,h2,h3,h4,h5,h6{ font-family:'Playfair Display',serif; font-weight:700; margin:0; color:#333; }
-    h1{ font-size:48px; margin-bottom:20px; }
-    h2{ font-size:36px; margin-top:30px; margin-bottom:20px; }
-    h3{ font-size:28px; margin-top:20px; margin-bottom:15px; }
-    p,span,li,a,div,ul{ font-family:'Open Sans',sans-serif; font-weight:400; color:#333; }
-
-    /* --- SPECIAL ISSUE HEADER --- */
-    .special-issue-header{ background:#D1C7BD; background-size:cover; width:100vw; padding:15px 22px; text-align:center; }
-    .special-issue-header a{ background:#D1C7BD; color:#333; padding:0; text-decoration:none; border-radius:0; font-weight:600; }
-    .special-issue-header a:hover,.special-issue-header a:focus{ color:#003366; outline:none; }
-
-    /* --- HERO BANNER --- */
-    .hero-banner{
-      background:url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
-      background-size:cover; width:100vw; position:relative; padding:170px 20px;
-    }
-    .hero-banner::after{ content:""; position:absolute; inset:0; z-index:0; }
-    .hero-banner h1{ font-size:40px; color:#333; margin-top:-100px; }
-    .hero-banner p{ margin:8px 0; font-size:20px; color:white; text-align:right; margin-right:158px; }
-    .im{ font-size:12px; color:white; text-align:right; margin-right:158px; margin-top:50px; padding-bottom:150px; }
-
-    /* --- NAV --- */
-    nav{ background:#D1C7BD; background-size:cover; width:100vw; padding:15px 22px; }
-    nav a{ color:#333; text-decoration:none; margin:10px; font-size:18px; transition:background-color .3s ease,color .3s ease; }
-    nav a:hover,nav a:focus{ background:#A89F91; color:#fff; outline:none; }
-
-    /* --- SECTIONS --- */
-    section{ padding:20px; }
-    section h2{ margin-top:0; margin-bottom:10px; }
-
-    /* --- CFP --- */
-    .cfp-container{ max-width:800px; margin:0 auto; text-align:justify; }
-    .cfp-container h3{ text-align:center; margin:1em 0 .5em; }
-    .cfp-container ul{ text-align:left; margin:1em auto; list-style:disc; list-style-position:outside; padding-left:20px; }
-
-    /* --- TPC --- */
-    .tpc-container{ max-width:800px; margin:0 auto; text-align:justify; }
-    .tpc-container ul{ text-align:left; margin:1em auto; list-style:disc; list-style-position:outside; padding-left:20px; }
-
-    /* --- INVITED SPEAKER (NEW) --- */
-    .invited-card{
-      max-width:1100px; margin:0 auto; text-align:left; background:#fff;
-      border-radius:12px; padding:24px; display:flex; gap:24px;
-      box-shadow:0 8px 20px rgba(0,0,0,.06);
-    }
-    .invited-photo img{
-      width:240px; height:auto; border-radius:10px; object-fit:cover; display:block;
-    }
-    .invited-content{ flex:1; }
-    .invited-name{ font-size:30px; margin:0 0 6px; }
-    .invited-affil{ color:#666; font-size:16px; margin-bottom:14px; }
-    .invited-content p{ margin:10px 0; }
-    .invited-label{ font-weight:600; }
-    .invited-time{ font-weight:700; color:#c62828; margin-top:12px; }
-    .invited-content a{ text-decoration:none; }
-    .invited-content a:hover{ text-decoration:underline; }
-
-    @media (max-width: 860px){
-      .invited-card{ flex-direction:column; align-items:flex-start; }
-      .invited-photo img{ width:100%; max-width:420px; }
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center; /* Centers everything by default */
+      background-color: #f9f9f9;
+      font-size: 18px;
+      line-height: 1.8;
+      /* Extra bottom padding so fixed footer doesn't cover content */
+      padding-bottom: 60px;
     }
 
-    /* --- FOOTER --- */
-    .footer{
-      left:0; width:100%; position:running(footer);
-      padding:10px; background:#003366; color:#fff;
+    /* Headings: Playfair Display (serif) */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin: 0;
+      color: #333;
     }
+    h1 { font-size: 48px; margin-bottom: 20px; }
+    h2 { font-size: 36px; margin-top: 30px; margin-bottom: 20px; }
+    h3 { font-size: 28px; margin-top: 20px; margin-bottom: 15px; }
+
+    
+  /* Paragraphs and other text: Open Sans (sans-serif) */
+    p, span, li, a, div, ul {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: #333;
+    }
+
+      /* --- SPECIAL ISSUE HEADER --- */
+    .special-issue-header {
+      background-color: #D1C7BD;
+        background-size: cover;
+        width: 100vw;
+         padding: 15px 22px;
+      text-align: center;
+    }
+    .special-issue-header h2 {
+      margin-bottom: 10px;
+    }
+    .special-issue-header a {
+      background-color: #D1C7BD;
+      color: #333;
+      padding: 0px 0px;
+      text-decoration: none;
+      border-radius: 0px;
+      font-weight: 600;
+    }
+
+    .special-issue-header a:hover,
+    .special-issue-header a:focus {
+      color: #003366;
+      outline: none;
+    }
+    
+
+
+    /* --- HERO BANNER STYLES   --- */
+
+    
+    .hero-banner {
+      background: url('https://civilisable.com/wp-content/uploads/2024/04/The-Maidens-Tower-9.4.2024.jpg') center/cover no-repeat;
+        background-size: cover;
+        width: 100vw;
+    position: relative;
+       padding: 170px 20px;
+    }
+       /* Overlay for better text readability */
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-banner h1 {
+      font-size: 40px;
+      color: #333;
+      margin-top: -100px; /* Adjust this value as needed */
+
+    }
+    
+    .hero-banner p {
+      margin: 8px 0;
+      font-size: 20px; 
+      color: white; /* #555;  #4B4B4B */
+      text-align: right;
+      margin-right: 158px; /* Adjust this value to position the paragraph from the right edge */
+    }
+    
+  .im {
+    font-size: 12px; 
+    color: white;
+    text-align: right;
+    margin-right: 158px;
+    margin-top: 50px; /* Adjust this value to move it further down */
+    padding-bottom: 150px; /* Optional: Adds extra spacing */
+  }
+
+    
+    /* --- NAVIGATION STYLES --- */
+  nav {
+      background: #D1C7BD;
+      background-size: cover;
+        width: 100vw;
+      /* padding: 10px; */
+    padding: 15px 22px;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #A89F91;
+      color: #fff;
+      outline: none;
+    }
+
+    
+    /* --- MAIN CONTENT SECTIONS --- */
+    section {
+      padding: 20px;
+    }
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    /* --- CFP SPECIFIC STYLES --- */
+    /* A container to override the default center alignment and justify the text */
+    .cfp-container {
+      max-width: 800px;  /* keeps text at a comfortable width */
+      margin: 0 auto;    /* center the container itself */
+      text-align: justify;
+    }
+
+    /* Keep subheadings (h3) centered or left-aligned, as you prefer */
+    .cfp-container h3 {
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Make sure lists are left-aligned for clarity */
+    .cfp-container ul {
+      text-align: left;
+      margin: 1em auto;
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 20px;
+    }
+
+    .tpc-container {
+      max-width: 800px;  /* keeps text at a comfortable width */
+      margin: 0 auto;    /* center the container itself */
+      text-align: justify;
+    }
+
+    .tpc-container ul {
+      text-align: left;
+      margin: 1em auto;
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 20px;
+    }
+
+    
+    /* --- FOOTER STYLES --- */
+
+
+    .footer {
+            left: 0;
+            width: 100%;
+            position: running(footer);
+            padding: 10px;  
+            width: 100%;
+            background: #003366;
+            color: white;
+        } 
+    
+  <!--  footer {
+      position: relative;
+      clear: both;
+      bottom: 0;
+      background: #003366;
+      color: white;
+      padding: 10px;  
+      width: 100%;
+      left: 0;
+      margin-top: -200px;
+    } -->
+  
+
+ 
   </style>
 </head>
 <body>
 
-  <!-- SPECIAL ISSUE HEADER -->
+   <!-- SPECIAL ISSUE HEADER -->
   <header class="special-issue-header">
-    <p>Organized within the <strong><a href="https://2025.ieeemlsp.org/en/" target="_blank">35th IEEE International Workshop on Machine Learning for Signal Processing</a></strong></p>
+   <!-- <h2>Special Session: Applications of AI in the Analysis of Cultural and Artistic Heritage</h2> -->
+    <p>Organized within the <strong> <a href="https://2025.ieeemlsp.org/en/" target="_blank"> 35th IEEE International Workshop on Machine Learning for Signal Processing </a> </strong> </p>
+    <!-- If available, you can include the MLSP 2025 logo below the text:
+         <img src="path-to-mlsp-logo.png" alt="MLSP 2025 Logo" style="max-width:150px; display:block; margin: 10px auto;"> -->
+  
+    <!-- <a href="https://2025.ieeemlsp.org/en/" target="_blank">Visit MLSP 2025</a>  -->
   </header>
-
+  
   <!-- HERO BANNER -->
   <header class="hero-banner">
     <h1>Applications of AI in the Analysis of Cultural and Artistic Heritage</h1>
-    <p><strong>August 31 - September 3, 2025</strong></p>
+    <p> <strong> August 31 - September 3, 2025</strong></p>
     <p>Istanbul, Turkey</p>
+    <!-- <div class="im">Fausto Zonaro, Torre de Leandro (1854-1929)</div> -->
   </header>
 
   <!-- NAVIGATION -->
@@ -118,39 +261,213 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ... diğer bölümler aynı ... -->
+  <!-- MAIN CONTENT 
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Join us for a special session on AI in Cultural and Artistic Heritage at MLSP 2025.</p>
+  </section> -->
 
-  <!-- INVITED SPEAKER (UPDATED) -->
+    
+
+  <!-- CALL FOR PAPERS -->
+  <section id="cfp">
+    <h2>Overview</h2>
+    <div class="cfp-container">
+
+
+      <p>
+          Artificial Intelligence is transforming the study, preservation, and interpretation of cultural and artistic heritage.  
+          With the rapid expansion of digital archives and datasets, computational methods have become essential for analyzing,  
+          classifying, and enhancing a wide range of historical and artistic materials.  </p>
+
+      <p>
+          This special session aims to bring together researchers from computer vision, AI, and cultural and artistic heritage studies  
+          to foster multidisciplinary collaboration and showcase the latest advancements in AI-driven methodologies. We focus on  
+          machine learning techniques applied to textual, visual, and multimodal data to deepen our understanding of cultural  
+          artifacts, artworks, and historical records.  </p>
+      <p>    
+          We invite contributions on AI innovations in cultural and artistic heritage analysis,  
+          including text recognition, image classification, restoration, and multimodal interpretation.  
+          </p>
+    </br>
+          <p><strong>Topics of interest include, but are not limited to:</strong></p>
+          <ul>
+            <li>Image Analysis & Artifact Classification</li>
+            <li>AI-driven Reconstruction, Restoration and Enhancement of Cultural and Artistic Artifacts</li>
+            <li>Machine Learning for Historical Document Understanding</li>
+            <li>Computational Systems for Creativity</li>
+            <li>Multimodal AI Approaches for Cultural Heritage Analysis</li>
+            <li>AI in Art History and Artistic Style Analysis</li>
+            <li>Understanding AI-generated images in the context of art and culture.</li>
+
+</ul>
+      
+<section id="promoted">
+ <div class="cfp-container">
+   <p> This special session is promoted by the <a href= "https://www.cvl.iis.u-tokyo.ac.jp/IAPR-TC19/" target = "_blank"> <strong>IAPR Technical Committee 19 </strong></a> (Computer Vision for Cultural Heritage Applications) and <a href= "https://maiacost.eu", target = "_blank"> <strong> Cost Action MAIA (CA23141) </strong> </a> - Managing Artificial Intelligence in Archaeology.
+</p>
+</section>
+
+<section id="submission">
+      <h3>Important Dates:</h3>
+      <ul>
+        <li><strong>Deadline for paper submissions:</strong> <del>May 10, 2025</del> — <strong>May 24, 2025</strong> </li>
+        <li><strong>Notification of paper acceptance:</strong> <del>June 24, 2025 </del> </li>
+        <li><strong>Deadline for camera-ready paper submissions:</strong> <del>July 27, 2025 </del> </li>
+      </ul>
+
+      <h3>Submission Guidelines:</h3>
+      <p><strong>Authors</strong> are invited to submit <strong>6 pages full-length papers</strong>, including figures and references.       </p>
+  <p><strong>All accepted and presented papers will be published in and indexed by </strong><strong><a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank"> IEEE Xplore</strong> </a>. </p>
+      </br> 
+      <p>Please observe that MLSP uses a <strong>double-blind review process</strong>. Thus, it is important that 
+      all potentially identifying information (such as author names and affiliations) is removed
+      from the initial submission pdf file. For further information, please follow the guidelines provided on the <a href= "https://2025.ieeemlsp.org/en/PAPER-SUBMISSION-GUIDELINES.html" target="_blank"> <strong>main conference website </strong></a>.</p>
+
+</br>
+
+        <p> <strong> Special session papers are to be submitted through Openreview at: <a href ="https://openreview.net/group?id=IEEE.org/MLSP/2025_Special_Sessions" target="_blank"> https://openreview.net/group?id=IEEE.org/MLSP/2025_Special_Sessions </a> </strong>
+      </p>
+       </div>
+  </section>
+
+  
+<section id="organization">
+  <h2>Organizers</h2>
+  <style>
+    .organizers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px; /* Adjust spacing between organizers */
+      justify-content: center;
+      align-items: center;
+    }
+    .organizer {
+      text-align: center;
+    }
+    .organizer img {
+      width: 120px; /* Adjust size as needed */
+      height: 120px;
+      border-radius: 50%; /* Makes images circular */
+      object-fit: cover;
+    }
+    .organizer p {
+       margin: 0; /* Removes any top and bottom margin */
+
+      font-size: 16px;
+      color: #333;
+    }
+    .organizer-affiliation {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      line-height: 1.3em;
+    }
+
+  </style>
+ <!-- https://apps.unimi.it/ws/chiedove/media/image/sinem_aslan  snm5.jpeg-->
+  <div class="organizers-container">
+    <div class="organizer">
+             <a href="https://www.unimi.it/en/ugov/person/sinem-aslan" target="_blank">
+<img src="https://apps.unimi.it/ws/chiedove/media/image/sinem_aslan" alt="Sinem Aslan">
+             </a> <p><strong>Sinem Aslan</strong></p>
+       <div class="organizer-affiliation"> University of Milan </br>Italy </div>
+    </div>
+    <div class="organizer">
+      <a href="https://scholar.google.com/citations?user=LfIDj68AAAAJ&hl=en&oi=ao" target="_blank">
+      <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LfIDj68AAAAJ&citpid=5" alt="Hazım Kemal Ekenel">
+      </a>
+      <p><strong>Hazım Kemal Ekenel</strong></p>
+      <div class="organizer-affiliation">Istanbul Technical University</br> Turkey </div>
+      <div class="organizer-affiliation">NYU Abu Dhabi</br> </div>
+    </div>
+    <div class="organizer">
+      <a href="https://www.gennarovessio.com" target="_blank">    
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQFo4vAbWbWtxw/profile-displayphoto-shrink_200_200/B4DZPpANYaGkAY-/0/1734780967592?e=2147483647&v=beta&t=4OApCgp5QGRV0OrInD5SOa6lc2COz4in8SuCx_1jTWA" alt="Gennaro Vessio">
+      </a>
+      <p><strong>Gennaro Vessio</strong></p>
+      <div class="organizer-affiliation">University of Bari Aldo Moro </br>  Italy </div>
+    </div>
+    <div class="organizer">
+      <a href="https://www.bradford.ac.uk/staff/hugail/" target="_blank">   
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS7ADiQbAtljLwB57BSP0RR6F-AcsXHwNWp9CtE8YZ-8jifA1yddYkVm1zcEXqPPg4_uPsfLg" alt="Hassan Ugail">
+      </a>
+      <p><strong>Hassan Ugail</strong></p>
+      <div class="organizer-affiliation">University of Bradford</br>  UK </div>
+    </div>
+    <div class="organizer">
+       <a href="https://www.maths.tcd.ie/~bouracha/index.html" target="_blank">    
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRyNU65FE24X9v4WStme6xe7PIQK6NRdM6YXhNPtdeDw_PVFy-pbbLQ5n6mae5Aul2Vl-7c-fOpVJVr-TJVJwHOeg" alt="Anthony Bourached">
+       </a>
+      <p><strong>Anthony Bourached</strong></p>
+      <div class="organizer-affiliation">University College London</br> UK </div>
+    </div>
+    <div class="organizer">
+      <a href="https://www.cisbec.unipi.it/afferenti/10-afferenti/37-gattiglia-gabriele.html" target="_blank">   
+      <img src="https://www.su.se/polopoly_fs/1.609064!/image/image.jpg_gen/derivatives/widescreen_690/image.jpg" alt="Gabriele Gattiglia">
+      </a>
+      <p><strong>Gabriele Gattiglia</strong></p>
+      <div class="organizer-affiliation">University of Pisa</br>Italy </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  <section id="tpc">
+  <h2>Technical Program Committee</h2>
+  <div class="tpc-container">
+    <ul>
+      <li> Bahar Aydemir, EPFL, Switzerland </li>
+      <li> Federico Beccatini, University of Siena, Italy </li>
+      <!--<li> Fabio Bellavia, University of Palermo, Italy </li>-->
+      <li> Deblina Bhattacharjee, University of Bath, UK </li> 
+      <li> Herve Le Borgne, CEA-List, France </li>
+      <li> Guillaume Caron,  CNRS-AIST Joint Robotics Laboratory, Japan </li>
+      <li> Giovanna Castellano, University of Bari Aldo Moro, Italy </li> 
+      <li> Eva Cetinic, University of Zurich, Switzerland </li>    
+      <li> Lucia Cipolina Kun, University of Bristol, UK </li> 
+      <li> Giovanni Colavizza, University of Copenhagen, Denmark </li> 
+      <li> Aykut Erdem, Koç University, Turkey </li> 
+      <li> Erkut Erdem, Hacettepe University, Turkey </li> 
+      <!-- <li> Sara Ferro, Italian Institute of Technology, Italy </li> -->
+      <li> Marco Fiorucci, University of Padova, Italy </li>   
+      <li> Martin Kampel, Vienna University of Technology, Austria </li>
+      <li> Ronak Kosti, Friedrich-Alexander-Universität, Germany </li> 
+      <li> Melda Küçükdemirci, Istanbul University, Turkey </li>
+      <li> Albert Ali Salah, Utrecht University, Netherlands </li>       
+      <!--<li> Mathias Zinnen,  Friedrich-Alexander-Universität, Germany </li> -->
+    </ul>
+  </div>
+</section>
+    
+
+  
+  </section>
+
   <section id="invited">
     <h2>IAPR Invited Speaker</h2>
+   <a href="https://profiles.stanford.edu/david-g-stork"     target="_blank" rel="noopener">  <p> <strong>David G. Stork</strong>, Stanford University </p> </a>
+     <ul>
+      <li> David G. Stork, PhD is Adjunct Professor at Stanford University and a graduate in Physics from MIT and 
+        the University of Maryland;  
+        he also studied Art History at Wellesley College.  He has held faculty positions in Physics, Mathematics, 
+        Computer Science, Statistics, Electrical Engineering, Neuroscience, Psychology, Computational Mathematical Engineering, 
+        Symbolic Systems, and Art and Art History variously at Wellesley and Swarthmore Colleges, Clark, Boston, and Stanford 
+        Universities, and the Technical University of Vienna.  He is a Fellow of seven international societies and has published 
+        eight books, 220+ scholarly articles, and 64 US patents.  His Pixels & paintings:  Foundations of computer-assisted connoisseurship 
+        (Wiley) appeared this year and he is completing Principled art authentication:  A probabilistic foundation for representing and 
+        reasoning under uncertainty. </li>
 
-    <div class="invited-card">
-      <div class="invited-photo">
-        <!-- Kendi görsel bağlantını buraya koy -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Placeholder_Person.jpg" alt="David G. Stork">
-      </div>
+         <li> Title of the Talk: When computers look at art: Recent triumphs and future opportunities for computer-assisted connoisseurship of fine art paintings and drawings </li>
+   <li>Abstract: Our cultural patrimony of fine art paintings and drawings comprise some of the most important, memorable, and consequential images ever created, and present numerous problems in art history and the interpretation of "authored" stylized images.  While sophisticated imaging (by numerous methods) has long been a mainstay in museum curation and conservation, it is only in the past few years that true image analysis—powered by computer vision, machine learning, and artificial intelligence—have been applied to fine art images.  Fine art paintings differ in numerous ways from the traditional photographs, videos, and medical images that have commanded the attention of most experts up to now:  such paintings vary extensively in style, content, non-realistic conventions, and especially intended meaning.  
 
-      <div class="invited-content">
-        <h3 class="invited-name">
-          <a href="https://profiles.stanford.edu/david-g-stork" target="_blank" rel="noopener">David G. Stork</a>
-        </h3>
-        <div class="invited-affil">Stanford University</div>
+Rigorous computer methods have outperformed even seasoned connoisseurs on several tasks in the image understanding of art, and have provided new insights and settled deep disputes in art history.  Additionally, the classes of problems in art analysis, particularly those centered on inferring meaning from images, are forcing computer experts to develop new algorithms and concepts in artificial intelligence.  
 
-        <p><span class="invited-label">Bio:</span> David G. Stork, PhD is Adjunct Professor at Stanford University and a graduate in Physics from MIT and the University of Maryland; he also studied Art History at Wellesley College. He has held faculty positions in Physics, Mathematics, Computer Science, Statistics, Electrical Engineering, Neuroscience, Psychology, Computational Mathematical Engineering, Symbolic Systems, and Art and Art History variously at Wellesley and Swarthmore Colleges, Clark, Boston, and Stanford Universities, and the Technical University of Vienna. He is a Fellow of seven international societies and has published eight books, 220+ scholarly articles, and 64 US patents. His <em>Pixels &amp; paintings: Foundations of computer-assisted connoisseurship</em> (Wiley) appeared this year and he is completing <em>Principled art authentication: A probabilistic foundation for representing and reasoning under uncertainty</em>.</p>
-
-        <p><span class="invited-label">Talk title:</span> <em>When computers look at art: Recent triumphs and future opportunities for computer-assisted connoisseurship of fine art paintings and drawings</em></p>
-
-        <p><span class="invited-label">Abstract:</span> Our cultural patrimony of fine art paintings and drawings comprise some of the most important, memorable, and consequential images ever created, and present numerous problems in art history and the interpretation of “authored” stylized images. While sophisticated imaging (by numerous methods) has long been a mainstay in museum curation and conservation, it is only in the past few years that true image analysis—powered by computer vision, machine learning, and artificial intelligence—have been applied to fine art images. Fine art paintings differ in numerous ways from the traditional photographs, videos, and medical images that have commanded the attention of most experts up to now: such paintings vary extensively in style, content, non-realistic conventions, and especially intended meaning.</p>
-
-        <p>Rigorous computer methods have outperformed even seasoned connoisseurs on several tasks in the image understanding of art, and have provided new insights and settled deep disputes in art history. Additionally, the classes of problems in art analysis, particularly those centered on inferring meaning from images, are forcing computer experts to develop new algorithms and concepts in artificial intelligence.</p>
-
-        <p>This talk, profusely illustrated with fine art images and computer analyses, argues for the new discipline of computer-assisted connoisseurship, a merger of humanist and scientific approaches to image understanding. Such work will continue to be embraced by art scholars, and addresses new grand challenges in artificial intelligence.</p>
-
-        <p class="invited-time">Time: Sunday, August 31, 17.00–18.00</p>
-      </div>
-    </div>
+This talk, profusely illustrated with fine art images and computer analyses, argues for the new discipline of computer-assisted connoisseurship, a merger of humanist and scientific approaches to image understanding.  Such work will continue to be embraced by art scholars, and addresses new grand challenges in artificial intelligence. </li>
   </section>
-  
+
   <section id="program">
     <h2>Program</h2>
     <p> See the <a href= "https://2025.ieeemlsp.org/en/TECHNICAL-PROGRAM.html" target="_blank"> Technical Program </a> for the full schedule. 
@@ -192,7 +509,3 @@
   </footer> -- !>
 </body>
 </html>
-
-
-
-
